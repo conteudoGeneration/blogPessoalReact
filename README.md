@@ -31,3 +31,15 @@ yarn add @type/react-router-dom
 ## instalação do axios 
 
 yarn add axios
+
+## instalação do useLocalStorage 
+
+npm i react-use-localstorage
+
+## instalação do redux
+
+yarn add@type/redux react-redux
+
+## instalação do react-toastify
+
+npm install --save react-toastify
