@@ -21,5 +21,6 @@ rafce cria um componente de função com arrowfunction com exportaçao;
  https://marketplace.visualstudio.com/items?itemName=vscodeshift.material-ui-snippets
  
  ex muiAppBar cria um app bar
+ 
  ex muiButton cria um botão do material-ui
  
