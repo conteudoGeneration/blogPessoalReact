@@ -23,4 +23,8 @@ rafce cria um componente de função com arrowfunction com exportaçao;
 muiAppBar cria um app bar
  
 muiButton cria um botão do material-ui
+
+## instalação do react-router-dom
+
+yarn add @type/react-router-dom
  
