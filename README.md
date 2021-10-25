@@ -1,5 +1,9 @@
 # blogPessoalReact
 
+## instalando react
+
+npm install -g create-react-app
+
 criação do projeto = npx create-react-app blog-pessoal --template typescript
 
 ## extensão vscode ES7 React/Redux/GraphQL/React-Native snippets
