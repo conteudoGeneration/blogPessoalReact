@@ -16,7 +16,11 @@ rafce cria um componente de função com arrowfunction com exportaçao;
 
 ## instalação do material ui
 
+ npm install @mui/material
+
  yarn add @material-ui/core
+ 
+ yarn add @material-ui/core@next @emotion/react @emotion/styled
  
  yarn add @material-ui/icons
  
