@@ -24,6 +24,8 @@ rafce cria um componente de função com arrowfunction com exportaçao;
  
  yarn add @material-ui/icons
  
+ yarn add @mui/icons-material
+ 
  yarn add @material-ui/styles
  
  ## extensão vscode do material ui
