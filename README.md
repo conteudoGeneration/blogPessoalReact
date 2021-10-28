@@ -38,7 +38,9 @@ muiButton cria um botão do material-ui
 
 ## instalação do react-router-dom
 
-yarn add @type/react-router-dom
+yarn add react-router-dom
+
+yarn add @types/react-router-dom
  
 ## instalação do axios 
 
