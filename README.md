@@ -59,4 +59,4 @@ yarn add@type/redux@3.6.0 react-redux@7.2.5
 
 ## instalação do react-toastify
 
-npm install --save react-toastify
+npm install --save react-toastify@8.0.3
