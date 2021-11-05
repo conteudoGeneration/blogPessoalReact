@@ -57,7 +57,7 @@ npm i react-use-localstorage@3.5.3
 
 ## instalação do redux
 
-yarn add@type/redux@3.6.0 react-redux@7.2.5
+yarn add @types/redux@3.6.0 react-redux@7.2.5
 
 ## instalação do react-toastify
 
