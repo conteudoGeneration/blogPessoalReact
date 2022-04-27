@@ -1,7 +1,7 @@
 import React, { ChangeEvent, useEffect, useState } from 'react'
 import { Container, Typography, TextField, Button, Select, InputLabel, MenuItem, FormControl, FormHelperText } from "@material-ui/core"
 import './CadastroPost.css';
-import { useHistory, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import Tema from '../../../models/Tema';
 import useLocalStorage from 'react-use-localstorage';
 import Postagem from '../../../models/Postagem';
