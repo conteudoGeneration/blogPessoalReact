@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import {Box, Card, CardActions, CardContent, Button, Typography} from '@material-ui/core';
 import './DeletarTema.css';
-import { useHistory, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { buscaId, deleteId } from '../../../services/Service';
 import Tema from '../../../models/Tema';
 import { useSelector } from 'react-redux';
@@ -9,7 +9,7 @@ import { TokenState } from '../../../store/tokens/tokensReducer';
 import { toast } from 'react-toastify';
 
 function DeletarTema() {
-    let history = useHistory();
+    let navigate = useNavigate();
     const { id } = useParams<{id: string}>();
     const token = useSelector<TokenState, TokenState["tokens"]>(
       (state) => state.tokens
@@ -28,7 +28,7 @@ function DeletarTema() {
             theme: "colored",
             progress: undefined,
             });
-            history.push("/login")
+            navigate("/login")
     
         }
     }, [token])
@@ -67,7 +67,7 @@ function DeletarTema() {
           }
         
           function nao() {
-            history.push('/temas')
+            navigate('/temas')
           }
           
   return (

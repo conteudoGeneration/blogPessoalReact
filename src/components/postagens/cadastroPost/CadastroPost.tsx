@@ -1,7 +1,7 @@
 import React, { ChangeEvent, useEffect, useState } from 'react'
 import { Container, Typography, TextField, Button, Select, InputLabel, MenuItem, FormControl, FormHelperText } from "@material-ui/core"
 import './CadastroPost.css';
-import { useHistory, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import Tema from '../../../models/Tema';
 import Postagem from '../../../models/Postagem';
 import { busca, buscaId, post, put } from '../../../services/Service';
@@ -10,7 +10,7 @@ import { TokenState } from '../../../store/tokens/tokensReducer';
 import { toast } from 'react-toastify';
 
 function CadastroPost() {
-    let history = useHistory();
+    let navigate = useNavigate();
     const { id } = useParams<{ id: string }>();
     const [temas, setTemas] = useState<Tema[]>([])
     const token = useSelector<TokenState, TokenState["tokens"]>(
@@ -29,7 +29,7 @@ function CadastroPost() {
                 theme: "colored",
                 progress: undefined,
             });
-            history.push("/login")
+            navigate("/login")
 
         }
     }, [token])
@@ -127,7 +127,7 @@ function CadastroPost() {
     }
 
     function back() {
-        history.push('/posts')
+        navigate('/posts')
     }
 
     return (

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import {Typography, Button, Box, Card, CardActions, CardContent } from "@material-ui/core"
 import './DeletarPostagem.css';
-import { useHistory, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import Postagem from '../../../models/Postagem';
 import { buscaId, deleteId } from '../../../services/Service';
 import { useSelector } from 'react-redux';
@@ -9,7 +9,7 @@ import { TokenState } from '../../../store/tokens/tokensReducer';
 import { toast } from 'react-toastify';
 
 function DeletarPostagem() {
-    let history = useHistory();
+    let navigate = useNavigate();
     const { id } = useParams<{id: string}>();
     const token = useSelector<TokenState, TokenState["tokens"]>(
       (state) => state.tokens
@@ -28,7 +28,7 @@ function DeletarPostagem() {
             theme: "colored",
             progress: undefined,
         });
-            history.push("/login")
+        navigate("/login")
     
         }
     }, [token])
@@ -48,7 +48,7 @@ function DeletarPostagem() {
         }
 
         function sim() {
-            history.push('/posts')
+          navigate('/posts')
             deleteId(`/postagens/${id}`, {
               headers: {
                 'Authorization': token
@@ -67,7 +67,7 @@ function DeletarPostagem() {
           }
         
           function nao() {
-            history.push('/posts')
+            navigate('/posts')
           }
   return (
     <>

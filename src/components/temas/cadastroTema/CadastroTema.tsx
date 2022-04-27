@@ -1,6 +1,6 @@
 import React, {useState, useEffect, ChangeEvent} from 'react'
 import { Container, Typography, TextField, Button } from "@material-ui/core"
-import {useHistory, useParams } from 'react-router-dom'
+import {useNavigate, useParams } from 'react-router-dom'
 import './CadastroTema.css';
 import Tema from '../../../models/Tema';
 import { buscaId, post, put } from '../../../services/Service';
@@ -10,7 +10,7 @@ import { toast } from 'react-toastify';
 
 
 function CadastroTema() {
-    let history = useHistory();
+    let navigate = useNavigate();
     const { id } = useParams<{id: string}>();
     const token = useSelector<TokenState, TokenState["tokens"]>(
         (state) => state.tokens
@@ -103,7 +103,7 @@ function CadastroTema() {
         }
     
         function back() {
-            history.push('/temas')
+            navigate('/temas')
         }
   
     return (
