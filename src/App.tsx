@@ -1,34 +1,27 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/estaticos/navbar/Navbar';
 import Footer from './components/estaticos/footer/Footer';
 import Home from './paginas/home/Home';
-import Login from './paginas/login/Login';
 import './App.css';
+import Login from './paginas/login/Login';
 
 
 function App() {
   return (
     <Router>
       <Navbar />
-        <Switch>
-          <div style={{minHeight: '100vh'}}>
+      <Routes>
 
-            <Route exact path='/'>
-              <Login />
-            </Route>
+        <Route path="/" element={<Home />} />
 
-            <Route path='/login'>
-              <Login />
-            </Route>
+        <Route path="/home" element={<Home />} />
 
-            <Route path='/home'>
-              <Home />
-            </Route>
-          </div>
-        </Switch>
+        <Route path="/login" element={<Login />} />
+      </Routes>
       <Footer />
     </Router>
+
   );
 }
 
