@@ -1,13 +1,13 @@
 import React, { useState, useEffect, ChangeEvent } from 'react';
 import { Grid, Box, Typography, TextField, Button } from '@material-ui/core';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
 import { api } from '../../services/Service';
 import UserLogin from '../../models/UserLogin';
 import './Login.css';
 
 function Login() {
-    let history = useHistory();
+    let navigate = useNavigate();
     const [token, setToken] = useLocalStorage('token');
     const [userLogin, setUserLogin] = useState<UserLogin>(
         {
@@ -28,7 +28,7 @@ function Login() {
 
             useEffect(()=>{
                 if(token != ''){
-                    history.push('/home')
+                    navigate('/home')
                 }
             }, [token])
 
