@@ -1,7 +1,7 @@
 import React from 'react';
 import { AppBar, Toolbar, Typography, Box } from '@material-ui/core';
 import { Link } from 'react-router-dom';
-import {useHistory } from 'react-router-dom'
+import {useNavigate } from 'react-router-dom'
 import './Navbar.css'
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
@@ -12,13 +12,13 @@ function Navbar() {
     const token = useSelector<TokenState, TokenState["tokens"]>(
         (state) => state.tokens
       );
-    let history = useHistory();
+    let navigate = useNavigate();
     const dispatch = useDispatch();
     
     function goLogout(){
         dispatch(addToken(''));
         alert("Usuário deslogado")
-        history.push('/login')
+        navigate('/login')
     }
 
     var navbarComponent;
