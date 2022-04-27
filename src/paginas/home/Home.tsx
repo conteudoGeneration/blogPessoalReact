@@ -3,18 +3,18 @@ import {Typography, Box, Grid, Button} from '@material-ui/core';
 import TabPostagem from '../../components/postagens/tabpostagem/TabPostagem';
 import ModalPostagem from '../../components/postagens/modalPostagem/ModalPostagem';
 import './Home.css';
-import { useHistory } from 'react-router';
+import { useNavigate } from 'react-router';
 import useLocalStorage from 'react-use-localstorage';
 
 function Home() {
 
-    let history = useHistory();
+    let navigate = useNavigate();
     const [token, setToken] = useLocalStorage('token');
     
     useEffect(() => {
       if (token == "") {
           alert("Você precisa estar logado")
-          history.push("/login")
+          navigate("/login")
   
       }
   }, [token])
