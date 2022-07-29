@@ -64,10 +64,7 @@ yarn add @mui/material@5.0.6
 ---
 ### Instalação da React Router Dom
 ```
-yarn add react-router-dom@5.3.0
-```
-```
-yarn add @types/react-router-dom@5.1.8
+yarn add react-router-dom@6
 ```
 ---
 ### Instalação do Axios
