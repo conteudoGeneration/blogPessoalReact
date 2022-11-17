@@ -22,7 +22,7 @@ function CadastroTema() {
     useEffect(() => {
         if (token == "") {
             alert("Você precisa estar logado")
-            history.push("/login")
+            navigate("/login")
     
         }
     }, [token])
