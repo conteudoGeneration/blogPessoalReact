@@ -8,6 +8,7 @@ import { busca, buscaId, post, put } from '../../../services/Service';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 
+
 function CadastroPost() {
     let navigate = useNavigate();
     const { id } = useParams<{ id: string }>();
