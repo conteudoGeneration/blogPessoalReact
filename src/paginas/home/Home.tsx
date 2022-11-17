@@ -1,5 +1,6 @@
 import React from 'react';
-import {Button, Box, Paper} from '@material-ui/core';
+import {Button, Paper} from '@material-ui/core';
+import {Box} from '@mui/material';
 import './Home.css';
 
 function Home(){
