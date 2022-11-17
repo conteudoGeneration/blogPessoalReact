@@ -1,6 +1,6 @@
 import React, {useState, useEffect, ChangeEvent} from 'react'
 import { Container, Typography, TextField, Button } from "@material-ui/core"
-import {useHistory, useParams } from 'react-router-dom'
+import {useNavigate, useParams } from 'react-router-dom'
 import './CadastroTema.css';
 import useLocalStorage from 'react-use-localstorage';
 import Tema from '../../../models/Tema';
@@ -8,7 +8,7 @@ import { buscaId, post, put } from '../../../services/Service';
 
 
 function CadastroTema() {
-    let history = useHistory();
+    let navigate = useNavigate();
     const { id } = useParams<{id: string}>();
     const [token, setToken] = useLocalStorage('token');
     const [tema, setTema] = useState<Tema>({
@@ -19,7 +19,7 @@ function CadastroTema() {
     useEffect(() => {
         if (token == "") {
             alert("Você precisa estar logado")
-            history.push("/login")
+            navigate("/login")
     
         }
     }, [token])
@@ -72,7 +72,7 @@ function CadastroTema() {
         }
     
         function back() {
-            history.push('/temas')
+            navigate('/temas')
         }
   
     return (

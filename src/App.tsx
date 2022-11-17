@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/estaticos/navbar/Navbar';
 import Footer from './components/estaticos/footer/Footer';
 import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario';
@@ -18,53 +18,37 @@ function App() {
   return (
     <Router>
       <Navbar />
-      <Switch>
+    
         <div style={{ minHeight: '100vh' }}>
+        <Routes>
+        <Route path="/" element={<Login />} />
 
-          <Route exact path='/'>
-            <Login />
-          </Route>
+        <Route path="/login" element={<Login />} />
 
-          <Route path='/login'>
-            <Login />
-          </Route>
+        <Route path="/home" element={<Home />} />
 
-          <Route path='/home'>
-            <Home />
-          </Route>
+        <Route path="/cadastrousuario" element={<CadastroUsuario />} />
 
-          <Route path='/cadastrousuario'>
-            <CadastroUsuario />
-          </Route>
-          <Route path='/temas'>
-            <ListaTema />
-          </Route>
-          <Route path='/posts'>
-            <ListaPostagem />
-          </Route>
+        <Route path="/temas" element={<ListaTema />} />
 
-          <Route exact path='/formularioPostagem'>
-            <CadastroPost />
-          </Route>
-          <Route exact path='/formularioPostagem/:id'>
-            <CadastroPost />
-          </Route>
-          <Route exact path='/formularioTema'>
-            <CadastroTema />
-          </Route>
-          <Route exact path='/formularioTema/:id'>
-            <CadastroTema />
-          </Route>
-          <Route path='/deletarPostagem/:id'>
-            <DeletarPostagem />
-          </Route>
-          <Route path='/deletarTema/:id'>
-            <DeletarTema />
-          </Route>
+        <Route path="/posts" element={<ListaPostagem />} />
+
+        <Route path="/formularioPostagem" element={<CadastroPost />} />
+
+        <Route path="/formularioPostagem/:id" element={<CadastroPost />} />
+
+        <Route path="/formularioTema" element={<CadastroTema />} />
+
+        <Route path="/formularioTema/:id" element={<CadastroTema />} />
+
+        <Route path="/deletarPostagem/:id" element={<DeletarPostagem />} />
+
+        <Route path="/deletarTema/:id" element={<DeletarTema />} />
 
 
+        </Routes>
         </div>
-      </Switch>
+     
       <Footer />
     </Router>
   );

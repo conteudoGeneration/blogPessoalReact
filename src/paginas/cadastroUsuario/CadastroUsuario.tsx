@@ -1,5 +1,5 @@
 import React , {useState, useEffect, ChangeEvent } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import User from '../../models/User';
 import { cadastroUsuario } from '../../services/Service';
 import { Grid, Box, Typography, Button, TextField } from '@material-ui/core';
@@ -8,7 +8,7 @@ import './CadastroUsuario.css';
 
 function CadastroUsuario() {
 
-    let history = useHistory();
+    let navigate = useNavigate();
     const [confirmarSenha,setConfirmarSenha] = useState<String>("")
     const [user, setUser] = useState<User>(
         {
@@ -28,7 +28,7 @@ function CadastroUsuario() {
 
     useEffect(() => {
         if (userResult.id != 0) {
-            history.push("/login")
+            navigate("/login")
         }
     }, [userResult])
 

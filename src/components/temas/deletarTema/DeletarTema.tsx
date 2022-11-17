@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import {Box, Card, CardActions, CardContent, Button, Typography} from '@material-ui/core';
 import './DeletarTema.css';
-import { useHistory, useParams } from 'react-router-dom';
+import {useNavigate, useParams } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
 import { buscaId, deleteId } from '../../../services/Service';
 import Tema from '../../../models/Tema';
 
 
 function DeletarTema() {
-    let history = useHistory();
+    let navigate = useNavigate();
     const { id } = useParams<{id: string}>();
     const [token, setToken] = useLocalStorage('token');
     const [tema, setTema] = useState<Tema>()
@@ -16,7 +16,7 @@ function DeletarTema() {
     useEffect(() => {
         if (token == "") {
             alert("Você precisa estar logado")
-            history.push("/login")
+            navigate("/login")
     
         }
     }, [token])
@@ -36,7 +36,7 @@ function DeletarTema() {
         }
 
         function sim() {
-            history.push('/temas')
+          navigate('/temas')
             deleteId(`/tema/${id}`, {
               headers: {
                 'Authorization': token
@@ -46,7 +46,7 @@ function DeletarTema() {
           }
         
           function nao() {
-            history.push('/temas')
+            navigate('/temas')
           }
           
   return (

@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import {Typography, Button, Box, Card, CardActions, CardContent } from "@material-ui/core"
 import './DeletarPostagem.css';
-import { useHistory, useParams } from 'react-router-dom';
+import {useNavigate, useParams } from 'react-router-dom'
 import useLocalStorage from 'react-use-localstorage';
 import Postagem from '../../../models/Postagem';
 import { buscaId, deleteId } from '../../../services/Service';
 
 function DeletarPostagem() {
-    let history = useHistory();
+    let navigate = useNavigate();
     const { id } = useParams<{id: string}>();
     const [token, setToken] = useLocalStorage('token');
     const [post, setPosts] = useState<Postagem>()
@@ -15,7 +15,7 @@ function DeletarPostagem() {
     useEffect(() => {
         if (token == "") {
             alert("Você precisa estar logado")
-            history.push("/login")
+            navigate("/login")
     
         }
     }, [token])
@@ -35,7 +35,7 @@ function DeletarPostagem() {
         }
 
         function sim() {
-            history.push('/posts')
+          navigate('/posts')
             deleteId(`/postagens/${id}`, {
               headers: {
                 'Authorization': token
@@ -45,7 +45,7 @@ function DeletarPostagem() {
           }
         
           function nao() {
-            history.push('/posts')
+            navigate('/posts')
           }
   return (
     <>
