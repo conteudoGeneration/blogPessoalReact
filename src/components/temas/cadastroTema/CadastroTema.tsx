@@ -32,7 +32,7 @@ function CadastroTema() {
                 theme: "colored",
                 progress: undefined,
                 });
-            history.push("/login")
+            navigate("/login")
     
         }
     }, [token])
